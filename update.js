@@ -68,7 +68,7 @@ AOH2 PROVINCE TO JSON CONVERTER v1.0.0
                 files.forEach((fileName) => {
                     const filePath = `${pathSourceDir}/${fileName}`;
                     
-                    if (fs.lstatSync(filePath).isFile()) {
+                    if (fs.lstatSync(filePath).isFile() && !fileName.startsWith('.')) {
                         try {
                             let content = fs.readFileSync(filePath, 'utf8').trim();
                             
